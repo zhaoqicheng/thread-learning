@@ -1,4 +1,4 @@
-package com.example.demo.test;
+package com.example.demo.base;
 
 /**
  * Created by zhaoqicheng on 2/4/18.
@@ -21,6 +21,8 @@ package com.example.demo.test;
  */
 
 
+import lombok.extern.slf4j.Slf4j;
+
 import static java.lang.Thread.sleep;
 
 /**
@@ -31,6 +33,7 @@ import static java.lang.Thread.sleep;
  * 无法得知，我们能做的只是等待这条多线程的任务执行完毕而已。
  * 而Callable+Future/FutureTask却可以获取多线程运行的结果，可以在等待时间太长没获取到需要的数据的情况下取消该线程的任务，真的是非常有用。
  */
+@Slf4j
 public class ThreadBase implements Runnable {
 
     private String name;
