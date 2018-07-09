@@ -1,4 +1,4 @@
-package com.example.demo.thread.test;
+package com.example.demo.thread.example;
 
 import com.example.demo.annoations.UnThreadSafe;
 import lombok.extern.slf4j.Slf4j;
