@@ -42,7 +42,7 @@ __`final写法`__ :
 `将类声明为final使类不可继承，将所有的成员设置为私有属性，不可被外部访问，对变量不提供set方法，对所有的可变成员声明为final，通过构造器初始化所有的成员进行深度拷贝，提供get方法不返回对象本身，而是返回对象的拷贝。fianl修饰引用对象，对象不可重新指向其他对象，但是数据可以更改`
 
 __`线程封闭`__:
-- `ThreadLocal用法详解和原理`:
+- `ThreadLocal用法详解和原理:ThreadLocal并不是一个Thread，而是Thread的局部变量`
 
 __`常用java类的线程情况`__:
 - `StringBuff 为线程安全，StringBuilder 为线程不安全类`
@@ -71,16 +71,15 @@ __`线程池的优点`__:
 - `提供定期执行、定时执行、单线程、并发控制数等高级功能`
 
 __`线程池的常用类 ThreadPoolExecutor 的几个参数和方法释义`__:
-    `corePoolSize: 核心线程数`
-    `maximumPoolSize: 线程最大线程数`
-    `workQueue: 阻塞队列，存储等待执行的任务，会对线程池的运行过程产生重大影响(决定任务的处理方式)`
-    `corePoolSize > 线程数量 即使有空闲线程，也会创建新的线程处理任务; corePoolSize <= 线程数量 < maximumPoolSize && workQueue队列满了才会创建行的线程去执行任务 ; 如果 线程数量 = maximumPoolSize 那么等待空闲线程处理任务, 如果 线程数量 > maximumPoolSize采用策略执行任务。通过设置这三个参数，可以调优线程池，增加资源利用率，执行效率`
-    `keepAliveTime: 线程中没有任务时，最多保持多长时间终止`
-    `threadFactory: 线程工厂`
-    
-    `execute(): 提交任务，交给线程池进行处理`
-    `submit() : 提交任务，并且可以获得执行结果`
-    `showdown(): 等待任务执行完，关闭线程池`
+    `corePoolSize: 核心线程数`   
+    `maximumPoolSize: 线程最大线程数`   
+    `workQueue: 阻塞队列，存储等待执行的任务，会对线程池的运行过程产生重大影响(决定任务的处理方式)`    
+    `corePoolSize > 线程数量 即使有空闲线程，也会创建新的线程处理任务; corePoolSize <= 线程数量 < maximumPoolSize && workQueue队列满了才会创建行的线程去执行任务 ; 如果 线程数量 = maximumPoolSize 那么等待空闲线程处理任务, 如果 线程数量 > maximumPoolSize采用策略执行任务。通过设置这三个参数，可以调优线程池，增加资源利用率，执行效率`    
+    `keepAliveTime: 线程中没有任务时，最多保持多长时间终止`    
+    `threadFactory: 线程工厂`    
+    `execute(): 提交任务，交给线程池进行处理`    
+    `submit() : 提交任务，并且可以获得执行结果`    
+    `showdown(): 等待任务执行完，关闭线程池`     
     `showdownNow(): 关闭线程池，不等待任务执行完`
     
 __`死锁`__:`死锁是指两个或者两个以上的进程，在争夺资源发生的互相等待的情况，此时，如果没有外力作用，它们将一直等待下去。`
